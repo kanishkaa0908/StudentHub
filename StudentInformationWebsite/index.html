@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudentHub | Student Information System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-icon">S</span> StudentHub</a>
+    <nav>
+      <a href="#dashboard">Dashboard</a>
+      <a href="#students">Students</a>
+      <a href="#about">About</a>
+    </nav>
+    <button class="menu-button" id="menuButton" aria-label="Toggle navigation">☰</button>
+  </header>
+
+  <main>
+    <section class="hero" id="dashboard">
+      <div>
+        <p class="eyebrow">STUDENT INFORMATION SYSTEM</p>
+        <h1>Manage your students<br><span>in one simple place.</span></h1>
+        <p class="hero-copy">A beginner-friendly dashboard to add, search, and manage student details.</p>
+        <a class="primary-button" href="#students">Manage Students <span>→</span></a>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="art-circle"></div>
+        <div class="art-card card-back">✦</div>
+        <div class="art-card card-front"><div class="avatar">🎓</div><div class="fake-line long"></div><div class="fake-line"></div><div class="fake-badge">Student profile</div></div>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="Student statistics">
+      <article class="stat-card"><div class="stat-icon purple">♙</div><div><p>Total students</p><h2 id="totalCount">0</h2></div></article>
+      <article class="stat-card"><div class="stat-icon orange">▤</div><div><p>Departments</p><h2 id="departmentCount">0</h2></div></article>
+      <article class="stat-card"><div class="stat-icon green">✓</div><div><p>System status</p><h2 class="status-text">Active</h2></div></article>
+    </section>
+
+    <section class="student-section" id="students">
+      <div class="section-heading">
+        <div><p class="eyebrow">STUDENT DIRECTORY</p><h2>Student records</h2><p class="muted">Add a student or search the existing list.</p></div>
+        <button class="primary-button" id="showFormButton">＋ Add student</button>
+      </div>
+
+      <form id="studentForm" class="student-form hidden">
+        <h3 id="formTitle">Add a new student</h3>
+        <div class="form-grid">
+          <label>Full name<input id="studentName" type="text" placeholder="e.g. Kanishkaa Y K" required maxlength="60"></label>
+          <label>Register number<input id="studentRegister" type="text" placeholder="e.g. 24IT001" required maxlength="20"></label>
+          <label>Department<select id="studentDepartment" required><option value="">Choose department</option><option>Information Technology</option><option>Computer Science</option><option>Electronics</option><option>Mechanical</option><option>Civil</option><option>Electrical</option><option>Other</option></select></label>
+          <label>Email address<input id="studentEmail" type="email" placeholder="student@example.com" required maxlength="100"></label>
+        </div>
+        <div class="form-actions"><button class="primary-button" type="submit">Save student</button><button class="secondary-button" type="button" id="cancelFormButton">Cancel</button></div>
+      </form>
+
+      <div class="toolbar">
+        <div class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Search by name, register no. or department..."></div>
+        <span class="record-count" id="recordCount">0 records</span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>STUDENT</th><th>REGISTER NO.</th><th>DEPARTMENT</th><th>EMAIL</th><th>ACTION</th></tr></thead>
+          <tbody id="studentTableBody"></tbody>
+        </table>
+        <div class="empty-state" id="emptyState"><div class="empty-icon">♙</div><h3>No students found</h3><p>Add your first student using the button above.</p></div>
+      </div>
+      <p class="storage-note">ⓘ Demo project: records are saved in this browser using local storage.</p>
+    </section>
+
+    <section class="about" id="about"><div class="about-mark">S</div><div><h2>Simple tools for student records.</h2><p>StudentHub is a front-end mini project built with HTML, CSS, and JavaScript. It is responsive and works without a backend or database.</p></div></section>
+  </main>
+
+  <footer><span>© 2026 StudentHub</span><span>Made for learning and building ✦</span></footer>
+  <script src="script.js"></script>
+</body>
+</html>
